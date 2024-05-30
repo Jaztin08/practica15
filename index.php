@@ -2,71 +2,68 @@
 <html lang="es-mx">
 <head>
     <meta charset="UTF-8">
-    <title>IntroPhp7 Grupo X__</title>
-    <link rel="stylesheet" href="css/estilos.css"/>
-    <link rel="stylesheet" href="css/menu.css"/>
-    <link rel="stylesheet" href="css/problemas.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Rambla" rel="stylesheet">
+    <title>CiTIM Grupo XB</title>
+    <link rel="stylesheet" href="css_stem.css"/>
+
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <script src="js_codigo.js"></script>
 </head>
 <body>
-   <section class="wrapper">
+  <section class="wrapper">
     <header>
-      <h1 class="logo"><a href="index.html">IntroPHP7</a></h1>
-      <nav>
-      <ul>
-        <li><a href="index.php" class="current">Inicio</a></li>
-        <li><a href=galaxia.php>Galaxia</a></li>
-      </ul>
-      </nav>
+      <h1 class="logo"><a href="stem.html">CiTIM</a></h1>
+      
     </header>
-<section id="contenedor">
-<section  class="problema">
-  <h2>Problema: Cálcular la densidad de la Tierra</h2>
-  <p>Descripción:</p>
-  <p>El radio de la Tierra es 6 378 km y su masa es 5.97E24 kg. <br>
-a) ¿Cuál es la densidad promedio de la Tierra?<br>
-b) Si el radio de la Tierra se redujera a una tercera parte y su masa no cambiará, cuál serı́a su densidad?<br>
-c) Si el radio de la Tierra y su masa se redujera a una
-tercera parte, ¿su densidad serı́a la misma? ¿por qué?</p>
-</section>
-<section class="formulas">
-<h2>Fórmulas</h2>
-    Densidad = Masa/Volumen<br>
-    Volumen=(4/3)pi*r*r*r
-</section>
-<section class="datos">
-<h2>Datos:</h2>
-   m= 5.97E24 Kg. <br>
-   r= 6378 Km.
-</section>
-<section class="calculos">
-<h2>Solución</h2>
-   <p>a)La densidad de la Tierra es:<br>
-    densidad = 5.97E24 Kg/volumen (m) <br>
-    volumen= (4/3)*pi*(6378000)*(6378000)*(6378000)</p>
-</section>
-<?php
-     function calcula_densidad(){
-        $PI=3.141592;
-        $masa= 5.97E24;
-        $radio= 6378e3;
-        $volumen= (4/3)*$PI*$radio*$radio*$radio;
-        $densidad= $masa/$volumen;
-        return $densidad;
-     }
-?>
-<section class="resultado">
-<h2>Resultado:</h2>
-<div id="resultadoA"></div>
-<?php
- print "<h1> resultado: densidad = ".calcula_densidad(). " kg/(metro cubico)</h1>";
-?>
-</section>
-</section>
+    <section id="contenedor">
+      <section  class="problema">
+        <h2>Problema: Cálculo de la velocidad orbital de la Tierra</h2>
+        <p>Descripción:</p>
+        <p>La órbita de la Tierra es circular, con un radio de 1.5x10^11 m. La masa de la Tierra es M y la constante gravitacional es G. <br>
+        </p>
+      </section>
+      <section  class="esquemaProblema">
+        <h2>Esquema</h2>
+        <center>
+        <img class="imgProblema" src="VelOrbital.jpg">
+        </center>
+      </section>
+      <section class="formulas">
+        <h2>Fórmulas</h2>
+        Velocidad orbital = sqrt(G * M / r)
+      </section>
+      <section class="datos">
+        <h2>Datos:</h2>
+          M = 1.989 × 10^30 kg <br>
+          G = 6.67430 × 10^-11 m^3 kg^-1 s^-2 <br>
+          r = 1.496 × 10^11 m
+      </section>
+      <section class="calculos">
+        <h2>Solución</h2>
+        <p>La velocidad orbital de la Tierra es:<br>
+        velocidad = sqrt(G * M / r) m/s <br>
+        </p>
+        <button onclick="calcula_velocidad();">Presiona para calcular</button>
+      </section>
+      <section class="resultado">
+        <h2>Resultado:</h2>
+        <div id="resultadoA"></div>
+      </section>
+    </section>
     <footer class="pie">
-     Creative Commons versión 3.0 SciSoft 2024
+     Creative Commons versión 4.0 SciSoft 2024
     </footer>
-   </section>
+  </section>
+  <script>
+    function calcula_velocidad(){
+    var G = 6.67430e-11; // m^3 kg^-1 s^-2
+    var M = 1.989e30; // kg
+    var r = 1.496e11; // m
+    var v = Math.sqrt(G * M / r);
+    var d=document.getElementById("resultadoA");
+    d.innerHTML=v.toFixed(2)+' m/s';
+  }
+  </script>
+
+
 </body>
 </html>

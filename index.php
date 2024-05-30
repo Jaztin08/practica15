@@ -53,16 +53,17 @@
      Creative Commons versión 4.0 SciSoft 2024
     </footer>
   </section>
-  <script>
-    function calcula_velocidad(){
-    var G = 6.67430e-11; // m^3 kg^-1 s^-2
-    var M = 1.989e30; // kg
-    var r = 1.496e11; // m
-    var v = Math.sqrt(G * M / r);
-    var d=document.getElementById("resultadoA");
-    d.innerHTML=v.toFixed(2)+' m/s';
-  }
-  </script>
+<?php
+function calcula_velocidad() {
+    $G = 6.67430e-11; // m^3 kg^-1 s^-2
+    $M = 1.989e30; // kg
+    $r = 1.496e11; // m
+    $v = sqrt($G * $M / $r);
+    return number_format($v, 2) . ' m/s';
+}
+
+$resultado = calcula_velocidad();
+?>
 
 
 </body>
